@@ -4,7 +4,7 @@
   "description": "React app to test with",
   "main": "index.js",
   "scripts": {
-    "update": "git pull && yarn install",
+    "update": "yarn install",
     "build": "webpack",
     "test": "mocha",
     "start": "node server.js",
