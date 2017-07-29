@@ -4,11 +4,12 @@
   "description": "React app to test with",
   "main": "index.js",
   "scripts": {
-    "update": "yarn install",
+    "update": "git pull",
+    "install": "yarn install",
     "build": "webpack",
     "test": "mocha",
     "start": "node server.js",
-    "deploy": "npm run update && npm run build && npm run test && npm run start"
+    "deploy": "npm run install && npm run build && npm run test && npm run start"
   },
   "author": "Jonathan Rys",
   "license": "ISC",
