@@ -35,9 +35,3 @@ jobs:
         
       # run tests!
       - run: yarn test
-
-    deployment:
-      prod:
-        branch: master
-        commands:
-          - aws s3 sync ./build/ http://jonathanrys.s3-website.us-east-2.amazonaws.com/ --delete
