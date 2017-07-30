@@ -38,3 +38,6 @@ jobs:
 
       # build project
       - run: npm run build
+
+      - deploy:
+          command: aws s3 sync ./build/ http://jrys.s3-website.us-east-1.amazonaws.com/ --delete
