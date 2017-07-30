@@ -26,7 +26,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - install: yarn install
 
       - save_cache:
           paths:
@@ -34,10 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn test
+      - test: yarn test
 
       # build project
-      - run: npm run build
-
-      - deploy:
-          command: aws s3 sync ./build/ http://jrys.s3-website.us-east-1.amazonaws.com/ --delete
+      - build: npm run build
