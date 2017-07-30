@@ -1,5 +1,7 @@
 # Config file for Travis CI
-language: node
+language: node_js
+node_js:
+  - "node"
 
 deploy:
   provider: s3
