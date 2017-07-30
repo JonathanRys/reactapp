@@ -37,4 +37,4 @@ jobs:
       - run: yarn test
 
       # build project
-      - run: mpn run build
+      - run: npm run build
