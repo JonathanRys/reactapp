@@ -1,4 +1,6 @@
 # Config file for Travis CI
+language: node_js
+
 deploy:
   provider: s3
   access_key_id: "AKIAIFR3WGPPFUC6I2OQ"
