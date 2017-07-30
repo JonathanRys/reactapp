@@ -7,9 +7,11 @@ var Menu = React.createClass({
         for (var i = 0; i < this.props.menuItems.length; i++) {
             menu.push(<a key={i} href={this.props.menuItems[i].link}><li className="nav-item">{this.props.menuItems[i].label}</li></a>);
         }
-        return (<ul className="nav">
-                    {menu}
-                </ul>);
+        return (<nav>
+                    <ul className="nav">
+                        {menu}
+                    </ul>
+                </nav>);
     }
 });
 
