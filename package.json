@@ -8,8 +8,8 @@
     "test": "mocha",
     "build": "webpack",
     "start": "node server.js",
-    "remote": "s3-cli sync ./build/ s3://jrys/",
-    "deploy": "npm run test && npm run build && npm run remote",
+    "remote": "s3-cli sync ./build/ s3://jonathanrys/",
+    "deploy": "npm run test && npm run build",
     "launch": "npm run test && npm run build && npm run start"
   },
   "author": "Jonathan Rys",
