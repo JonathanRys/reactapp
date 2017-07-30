@@ -8,4 +8,4 @@ deploy:
   access_key_id: "AKIAIFR3WGPPFUC6I2OQ"
   secret_access_key: "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"
   bucket: "jonathanrys"
-  local_dir: build/*
+  local_dir: build
