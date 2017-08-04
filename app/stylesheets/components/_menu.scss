@@ -16,6 +16,7 @@ nav {
     
     margin: 0;
     a {
+        margin: 0.4em 0.4em;
         &:link, &:active {
             text-decoration: none;
         }
@@ -29,7 +30,6 @@ nav {
     display: inline-block;
     font-weight: bold;
     list-style-type: none;
-    margin: 0.4em 0.4em;
     padding: 0.4em 0.6em;
     text-indent: 0;
 
@@ -65,6 +65,13 @@ nav {
                     -1px  1px 1px $darkGray,
                     -1px -1px 1px $darkGray;
     }
+    &:hover {
+        color: $darkGray;
+        text-shadow: 1px  1px 1px $lightGrey,
+                     1px -1px 1px $lightGrey,
+                    -1px  1px 1px $lightGrey,
+                    -1px -1px 1px $lightGrey;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -73,9 +80,12 @@ nav {
     }
     .nav {
         padding: 0.8em 0.8em 0.8em 6%;
+
+        a {
+            margin: 0.4em 0.8em;
+        }
     }
     .nav-item {
-        margin: 0.4em 0.8em;
         padding: 0.6em 1.2em;
     }
 }
