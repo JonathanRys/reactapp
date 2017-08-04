@@ -6,13 +6,13 @@ $lightGrey: #e9ece5;
 nav {
     background-color: $seafoam;
     border: 2px solid $darkGray;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
     border-top-width: 1px;
     font-size: 0.7em;
 }
 .nav {
-    padding: 5px 5px;
+    padding: 0.4em 0.4em;
     
     margin: 0;
     a {
@@ -25,13 +25,13 @@ nav {
     color: $darkGray;
     background-color: $lightGrey;
     border: 2px solid $darkGray;
-    border-radius: 8px;
+    border-radius: 0.6em;
     display: inline-block;
     font-weight: bold;
     list-style-type: none;
-    margin: 5px 5px;
-    padding: 5px 8px;
-    text-indent: 0px;
+    margin: 0.4em 0.4em;
+    padding: 0.4em 0.6em;
+    text-indent: 0;
 
     &:hover {
         color: $lightGrey;
@@ -46,7 +46,7 @@ nav {
 }
 .settings {
     float: right;
-    padding: 10px 10px 10px 0px;
+    padding: 0.4em 0.4em 0.4em 0;
     font-size: 2em;
 }
 .selected {
@@ -72,10 +72,10 @@ nav {
         font-size: 1em;
     }
     .nav {
-        padding: 10px 10px 10px 6%;
+        padding: 0.8em 0.8em 0.8em 6%;
     }
     .nav-item {
-        margin: 5px 10px;
-        padding: 8px 15px;
+        margin: 0.4em 0.8em;
+        padding: 0.6em 1.2em;
     }
 }
