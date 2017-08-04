@@ -1,13 +1,19 @@
+$darkGray: #3b3a36;
+$olive: #b3c2bf;
+$seafoam: #c0dfd9;
+$lightGrey: #e9ece5;
+
 nav {
-    background-color: #c0dfd9;
-    border: 2px solid #3b3a36;
+    background-color: $seafoam;
+    border: 2px solid $darkGray;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     border-top-width: 1px;
     font-size: 0.7em;
 }
 .nav {
-    padding: 5px 0;
+    padding: 5px 5px;
+    
     margin: 0;
     a {
         &:link, &:active {
@@ -16,46 +22,48 @@ nav {
     }
 }
 .nav-item {
-    color: #3b3a36;
-    background-color: #e9ece5;
-    border: 2px solid #3b3a36;
+    color: $darkGray;
+    background-color: $lightGrey;
+    border: 2px solid $darkGray;
     border-radius: 8px;
     display: inline-block;
     font-weight: bold;
     list-style-type: none;
-    margin: 5px 10px;
-    padding: 8px 15px;
+    margin: 5px 5px;
+    padding: 5px 8px;
     text-indent: 0px;
+
     &:hover {
-        color: #e9ece5;
-        text-shadow: 1px  1px 1px #3b3a36,
-                     1px -1px 1px #3b3a36,
-                    -1px  1px 1px #3b3a36,
-                    -1px -1px 1px #3b3a36;
+        color: $lightGrey;
+        text-shadow: 1px  1px 1px $darkGray,
+                     1px -1px 1px $darkGray,
+                    -1px  1px 1px $darkGray,
+                    -1px -1px 1px $darkGray;
     }
     &:active {
-        background: linear-gradient(#b3c2bf, #e9ece5);
+        background: linear-gradient($olive, $lightGrey);
     }
 }
 .settings {
     float: right;
-    padding: 10px 15px;
+    padding: 10px 10px 10px 0px;
     font-size: 2em;
 }
 .selected {
-    background-color: #b3c2bf;
-    background: linear-gradient(#e9ece5, #b3c2bf);
-    color: #3b3a36;
-    text-shadow: 1px  1px 1px #e9ece5,
-                 1px -1px 1px #e9ece5,
-                -1px  1px 1px #e9ece5,
-                -1px -1px 1px #e9ece5;
+    background-color: $olive;
+    background: linear-gradient($lightGrey, $olive);
+    color: $darkGray;
+    text-shadow: 1px  1px 1px $lightGrey,
+                 1px -1px 1px $lightGrey,
+                -1px  1px 1px $lightGrey,
+                -1px -1px 1px $lightGrey;
+    
     &:focus {
-        color: #e9ece5;
-        text-shadow: 1px  1px 1px #3b3a36,
-                     1px -1px 1px #3b3a36,
-                    -1px  1px 1px #3b3a36,
-                    -1px -1px 1px #3b3a36;
+        color: $lightGrey;
+        text-shadow: 1px  1px 1px $darkGray,
+                     1px -1px 1px $darkGray,
+                    -1px  1px 1px $darkGray,
+                    -1px -1px 1px $darkGray;
     }
 }
 
@@ -65,5 +73,9 @@ nav {
     }
     .nav {
         padding: 10px 10px 10px 6%;
+    }
+    .nav-item {
+        margin: 5px 10px;
+        padding: 8px 15px;
     }
 }
