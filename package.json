@@ -10,7 +10,8 @@
     "test": "mocha",
     "build": "webpack",
     "start": "node server.js",
-    "launch": "npm run test && npm run build && npm run start"
+    "launch": "npm run build && npm run start",
+    "deploy": "npm run test && npm run launch"
   },
   "dependencies": {
     "express": "^4.15.3",

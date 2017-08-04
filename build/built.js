@@ -22450,15 +22450,16 @@ var Menu = React.createClass({
         var menu = [];
 
         for (var i = 0; i < this.props.menuItems.length; i++) {
+            var x = this.props.menuItems[i];
             menu.push(React.createElement(
                 'a',
-                { key: i, href: this.props.menuItems[i].link },
+                { key: i, href: x.link },
                 React.createElement(
                     'li',
-                    { className: 'nav-item' },
-                    React.createElement(FontAwesome, { name: this.props.menuItems[i].icon }),
+                    { className: "nav-item" + (i === 0 ? " selected" : '') },
+                    React.createElement(FontAwesome, { name: x.icon }),
                     ' ',
-                    this.props.menuItems[i].label
+                    x.label
                 )
             ));
         }
@@ -22847,7 +22848,7 @@ exports = module.exports = __webpack_require__(194)(undefined);
 
 
 // module
-exports.push([module.i, "header img {\n  max-width: 45%; }\n\nheader div {\n  text-align: center; }\n\nmain {\n  min-height: 300px;\n  padding: 20px 40px; }\n\nfooter {\n  bottom: 0px;\n  text-align: center; }\n\nnav {\n  background-color: #c0dfd9;\n  border: 1px solid #3b3a36;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px; }\n\n.nav {\n  padding: 10px;\n  margin-top: 0; }\n\n.nav a:link, .nav a:active {\n  text-decoration: none; }\n\n.nav-item {\n  color: #3b3a36;\n  background-color: #e9ece5;\n  border: 2px solid #3b3a36;\n  border-radius: 8px;\n  display: inline-block;\n  font-weight: bold;\n  list-style-type: none;\n  margin: 5px 10px;\n  padding: 8px 15px;\n  text-indent: 0px; }\n\n.settings {\n  float: right;\n  padding: 10px 15px;\n  font-size: 2em; }\n\nhtml {\n  height: 100%; }\n\nbody {\n  background-color: #b3c2bf;\n  color: #3b3a36;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 80%;\n  min-height: 100%;\n  margin: 0px;\n  padding: 0px; }\n", ""]);
+exports.push([module.i, "header img {\n  max-width: 45%; }\n\nheader div {\n  text-align: center; }\n\nmain {\n  min-height: 300px;\n  padding: 20px 40px; }\n\nfooter {\n  background-color: #c0dfd9;\n  border-top: 2px solid #3b3a36;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  height: 40px;\n  margin-top: -40px;\n  padding-top: 10px;\n  position: absolute;\n  text-align: center;\n  top: 100%;\n  width: 100%; }\n\nnav {\n  background-color: #c0dfd9;\n  border: 1px solid #3b3a36;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px; }\n\n.nav {\n  padding: 10px;\n  margin: 0; }\n\n.nav a:link, .nav a:active {\n  text-decoration: none; }\n\n.nav-item {\n  color: #3b3a36;\n  background-color: #e9ece5;\n  border: 2px solid #3b3a36;\n  border-radius: 8px;\n  display: inline-block;\n  font-weight: bold;\n  list-style-type: none;\n  margin: 5px 10px;\n  padding: 8px 15px;\n  text-indent: 0px; }\n\n.settings {\n  float: right;\n  padding: 10px 15px;\n  font-size: 2em; }\n\n.selected {\n  background-color: #b3c2bf;\n  color: #e9ece5; }\n\nhtml {\n  height: 100%; }\n\nbody {\n  background-color: #b3c2bf;\n  color: #3b3a36;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 80%;\n  min-height: 100%;\n  margin: 0px;\n  padding: 0px; }\n", ""]);
 
 // exports
 
