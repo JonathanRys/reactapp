@@ -22392,6 +22392,14 @@ module.exports = ReactDOMInvalidARIAHook;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var React = __webpack_require__(16);
 
 // Include components
@@ -22417,19 +22425,30 @@ var menu = [{
     icon: 'search'
 }];
 
-var App = React.createClass({
-    displayName: 'App',
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-    render: function render() {
-        return React.createElement(
-            'div',
-            null,
-            React.createElement(Menu, { menuItems: menu }),
-            React.createElement(Content, null),
-            React.createElement(Footer, null)
-        );
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
     }
-});
+
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(Menu, { menuItems: menu }),
+                React.createElement(Content, null),
+                React.createElement(Footer, null)
+            );
+        }
+    }]);
+
+    return App;
+}(React.Component);
 
 module.exports = App;
 
@@ -22440,6 +22459,14 @@ module.exports = App;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var React = __webpack_require__(16);
 var FontAwesome = __webpack_require__(186);
 
@@ -22448,41 +22475,56 @@ function handleClick(e) {
     buttons.forEach(function (elem) {
         elem.className = 'nav-item';
     });
-    e.target.className += ' selected';
+    if (e.target.tagName === "LI") {
+        e.target.className += ' selected';
+    } else {
+        e.target.parentNode.className += ' selected';
+    }
 }
 
-var Menu = React.createClass({
-    displayName: 'Menu',
+var Menu = function (_React$Component) {
+    _inherits(Menu, _React$Component);
 
-    render: function render() {
-        var menu = [];
+    function Menu() {
+        _classCallCheck(this, Menu);
 
-        for (var i = 0; i < this.props.menuItems.length; i++) {
-            var x = this.props.menuItems[i];
-            menu.push(React.createElement(
-                'a',
-                { key: i, href: x.link },
-                React.createElement(
-                    'li',
-                    { className: "nav-item" + (i === 0 ? " selected" : ''), onClick: handleClick },
-                    React.createElement(FontAwesome, { name: x.icon }),
-                    ' ',
-                    x.label
-                )
-            ));
-        }
-        return React.createElement(
-            'nav',
-            null,
-            React.createElement(
-                'ul',
-                { className: 'nav' },
-                menu,
-                React.createElement(FontAwesome, { className: 'settings', name: 'bars' })
-            )
-        );
+        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
     }
-});
+
+    _createClass(Menu, [{
+        key: 'render',
+        value: function render() {
+            var menu = [];
+
+            for (var i = 0; i < this.props.menuItems.length; i++) {
+                var x = this.props.menuItems[i];
+                menu.push(React.createElement(
+                    'a',
+                    { key: i, href: x.link },
+                    React.createElement(
+                        'li',
+                        { className: "nav-item" + (i === 0 ? " selected" : ''), onClick: handleClick },
+                        React.createElement(FontAwesome, { name: x.icon }),
+                        ' ',
+                        x.label
+                    )
+                ));
+            }
+            return React.createElement(
+                'nav',
+                null,
+                React.createElement(
+                    'ul',
+                    { className: 'nav' },
+                    menu,
+                    React.createElement(FontAwesome, { className: 'settings', name: 'bars' })
+                )
+            );
+        }
+    }]);
+
+    return Menu;
+}(React.Component);
 
 module.exports = Menu;
 
@@ -22765,23 +22807,42 @@ module.exports = exports['default'];
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var React = __webpack_require__(16);
 
-var Content = React.createClass({
-    displayName: 'Content',
+var Content = function (_React$Component) {
+    _inherits(Content, _React$Component);
 
-    render: function render() {
-        return React.createElement(
-            'main',
-            null,
-            React.createElement(
-                'p',
-                null,
-                'Here\'s some content'
-            )
-        );
+    function Content() {
+        _classCallCheck(this, Content);
+
+        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).apply(this, arguments));
     }
-});
+
+    _createClass(Content, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'main',
+                null,
+                React.createElement(
+                    'p',
+                    null,
+                    'Here\'s some content'
+                )
+            );
+        }
+    }]);
+
+    return Content;
+}(React.Component);
 
 module.exports = Content;
 
@@ -22792,27 +22853,46 @@ module.exports = Content;
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var React = __webpack_require__(16);
 
-var Footer = React.createClass({
-    displayName: "Footer",
+var Footer = function (_React$Component) {
+    _inherits(Footer, _React$Component);
 
-    render: function render() {
-        return React.createElement(
-            "footer",
-            null,
-            React.createElement(
-                "div",
+    function Footer() {
+        _classCallCheck(this, Footer);
+
+        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    }
+
+    _createClass(Footer, [{
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "footer",
                 null,
                 React.createElement(
-                    "span",
-                    { className: "copyright" },
-                    "\xA9 Copyright 2017"
+                    "div",
+                    null,
+                    React.createElement(
+                        "span",
+                        { className: "copyright" },
+                        "\xA9 Copyright 2017"
+                    )
                 )
-            )
-        );
-    }
-});
+            );
+        }
+    }]);
+
+    return Footer;
+}(React.Component);
 
 module.exports = Footer;
 
@@ -22856,7 +22936,7 @@ exports = module.exports = __webpack_require__(194)(undefined);
 
 
 // module
-exports.push([module.i, "header img {\n  max-width: 45%; }\n\nheader div {\n  text-align: center; }\n\nmain {\n  min-height: 300px;\n  padding: 20px 40px; }\n\nfooter {\n  background-color: #c0dfd9;\n  border-top: 2px solid #3b3a36;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  height: 40px;\n  margin-top: -40px;\n  padding-top: 10px;\n  position: absolute;\n  text-align: center;\n  top: 100%;\n  width: 100%; }\n\nnav {\n  background-color: #c0dfd9;\n  border: 2px solid #3b3a36;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n  border-top-width: 1px; }\n\n.nav {\n  padding: 10px;\n  margin: 0; }\n  .nav a:link, .nav a:active {\n    text-decoration: none; }\n\n.nav-item {\n  color: #3b3a36;\n  background-color: #e9ece5;\n  border: 2px solid #3b3a36;\n  border-radius: 8px;\n  display: inline-block;\n  font-weight: bold;\n  list-style-type: none;\n  margin: 5px 10px;\n  padding: 8px 15px;\n  text-indent: 0px; }\n  .nav-item:hover {\n    background: linear-gradient(#b3c2bf, #e9ece5); }\n\n.settings {\n  float: right;\n  padding: 10px 15px;\n  font-size: 2em; }\n\n.selected {\n  background-color: #b3c2bf;\n  background: linear-gradient(#e9ece5, #b3c2bf);\n  color: #e9ece5;\n  text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black; }\n  .selected:hover {\n    background: linear-gradient(#e9ece5, #b3c2bf); }\n\nhtml {\n  height: 100%; }\n\nbody {\n  background-color: #b3c2bf;\n  color: #3b3a36;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 80%;\n  min-height: 100%;\n  margin: 0px;\n  padding: 0px; }\n", ""]);
+exports.push([module.i, "header img {\n  max-width: 45%; }\n\nheader div {\n  text-align: center; }\n\nmain {\n  background: white;\n  margin: 0 6%;\n  min-height: 300px;\n  padding: 20px 40px; }\n\nfooter {\n  background-color: #c0dfd9;\n  border-top: 2px solid #3b3a36;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  height: 28px;\n  margin-top: -40px;\n  padding-top: 10px;\n  position: absolute;\n  text-align: center;\n  top: 100%;\n  width: 100%; }\n\nnav {\n  background-color: #c0dfd9;\n  border: 2px solid #3b3a36;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n  border-top-width: 1px;\n  font-size: 0.7em; }\n\n.nav {\n  padding: 5px 0;\n  margin: 0; }\n  .nav a:link, .nav a:active {\n    text-decoration: none; }\n\n.nav-item {\n  color: #3b3a36;\n  background-color: #e9ece5;\n  border: 2px solid #3b3a36;\n  border-radius: 8px;\n  display: inline-block;\n  font-weight: bold;\n  list-style-type: none;\n  margin: 5px 10px;\n  padding: 8px 15px;\n  text-indent: 0px; }\n  .nav-item:hover {\n    color: #e9ece5;\n    text-shadow: 1px  1px 1px #3b3a36,\r 1px -1px 1px #3b3a36,\r -1px  1px 1px #3b3a36,\r -1px -1px 1px #3b3a36; }\n  .nav-item:active {\n    background: linear-gradient(#b3c2bf, #e9ece5); }\n\n.settings {\n  float: right;\n  padding: 10px 15px;\n  font-size: 2em; }\n\n.selected {\n  background-color: #b3c2bf;\n  background: linear-gradient(#e9ece5, #b3c2bf);\n  color: #3b3a36;\n  text-shadow: 1px  1px 1px #e9ece5,\r 1px -1px 1px #e9ece5,\r -1px  1px 1px #e9ece5,\r -1px -1px 1px #e9ece5; }\n  .selected:focus {\n    color: #e9ece5;\n    text-shadow: 1px  1px 1px #3b3a36,\r 1px -1px 1px #3b3a36,\r -1px  1px 1px #3b3a36,\r -1px -1px 1px #3b3a36; }\n\n@media only screen and (min-width: 600px) {\n  nav {\n    font-size: 1em; }\n  .nav {\n    padding: 10px 10px 10px 6%; } }\n\nhtml {\n  height: 100%; }\n\nbody {\n  background-color: #b3c2bf;\n  color: #3b3a36;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 80%;\n  min-height: 100%;\n  margin: 0px;\n  padding: 0px; }\n", ""]);
 
 // exports
 
