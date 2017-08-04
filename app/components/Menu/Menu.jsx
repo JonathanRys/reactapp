@@ -6,7 +6,8 @@ var Menu = React.createClass({
         var menu = [];
 
         for (var i = 0; i < this.props.menuItems.length; i++) {
-            menu.push(<a key={i} href={this.props.menuItems[i].link}><li className="nav-item"><FontAwesome name={this.props.menuItems[i].icon} /> {this.props.menuItems[i].label}</li></a>);
+            var x = this.props.menuItems[i];
+            menu.push(<a key={i} href={x.link}><li className={"nav-item" + ((i === 0)? " selected": '')}><FontAwesome name={x.icon} /> {x.label}</li></a>);
         }
         return (<nav>
                     <ul className="nav">
