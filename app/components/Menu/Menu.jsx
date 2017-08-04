@@ -4,11 +4,15 @@ var FontAwesome = require('react-fontawesome');
 function handleClick(e) {
     var buttons = document.querySelectorAll('nav .nav-item')
     buttons.forEach((elem)=>{elem.className = 'nav-item'});
-    e.target.className += ' selected';
+    if (e.target.tagName === "LI") {
+        e.target.className += ' selected';
+    } else {
+        e.target.parentNode.className += ' selected';
+    }
 }
 
-var Menu = React.createClass({
-    render: function() {
+class Menu extends React.Component {
+    render() {
         var menu = [];
 
         for (var i = 0; i < this.props.menuItems.length; i++) {
@@ -22,6 +26,6 @@ var Menu = React.createClass({
                     </ul>
                 </nav>);
     }
-});
+}
 
 module.exports = Menu;

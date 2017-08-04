@@ -25,14 +25,14 @@ var menu = [{
                 icon: 'search'
             }];
 
-var App = React.createClass({
-    render: function(){
+class App extends React.Component {
+    render(){
         return (<div>
                     <Menu menuItems={menu} />
                     <Content />
                     <Footer />
                 </div>);
     }
-});
+}
 
 module.exports = App;
