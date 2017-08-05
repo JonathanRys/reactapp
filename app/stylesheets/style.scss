@@ -1,13 +1,14 @@
 @charset "utf-8";
 
 @import 'components/all';
+@import 'components/colors';
 
 html {
     height: 100%;
 }
 body {
-    background-color: #b3c2bf;
-    color: #3b3a36;
+    background-color: $olive;
+    color: $darkGray;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 80%;
     min-height: 100%;

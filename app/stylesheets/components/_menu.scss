@@ -1,7 +1,4 @@
-$darkGray: #3b3a36;
-$olive: #b3c2bf;
-$seafoam: #c0dfd9;
-$lightGrey: #e9ece5;
+@import 'colors';
 
 nav {
     background-color: $seafoam;
@@ -34,7 +31,7 @@ nav {
     text-indent: 0;
 
     &:hover {
-        color: $lightGrey;
+        color: $olive;
         text-shadow: 1px  1px 1px $darkGray,
                      1px -1px 1px $darkGray,
                     -1px  1px 1px $darkGray,
@@ -65,6 +62,7 @@ nav {
                     -1px  1px 1px $darkGray,
                     -1px -1px 1px $darkGray;
     }
+    /*Disable hover effect*/
     &:hover {
         color: $darkGray;
         text-shadow: 1px  1px 1px $lightGrey,
@@ -74,13 +72,12 @@ nav {
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
     nav {
         font-size: 1em;
     }
     .nav {
         padding: 0.8em 0.8em 0.8em 6%;
-
         a {
             margin: 0.4em 0.8em;
         }

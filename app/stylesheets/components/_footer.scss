@@ -1,6 +1,8 @@
+@import 'colors';
+
 footer {
-    background-color: #c0dfd9;
-    border-top: 2px solid #3b3a36;
+    background-color: $seafoam;
+    border-top: 2px solid $darkGray;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     height: 2em;

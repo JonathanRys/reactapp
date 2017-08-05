@@ -1,7 +1,6 @@
 var React = require('react');
 
 // Include components
-//var Banner = require('../Banner/Banner.jsx');
 var Menu = require('../Menu/Menu.jsx');
 var Content = require('../Content/Content.jsx');
 var Footer = require('../Footer/Footer.jsx');
